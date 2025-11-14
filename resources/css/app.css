@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply antialiased transition-colors duration-500;
+  }
+
+  ::selection {
+    background-color: #93C5FD; /* biru lembut */
+    color: #1E293B;
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
+}
+
+/* ========== ANIMASI & TRANSISI HALUS ========== */
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Sidebar smooth transition */
+aside {
+  transition: transform 0.3s ease, background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+/* Hover efek lembut untuk link */
+a {
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+  transform: translateX(2px);
+}
+
+tr:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Efek hover dark mode */
+.dark .rounded-xl:hover {
+  background-color: rgba(30, 41, 59, 0.7);
+}
+
+/* Global transition smooth */
+body, aside, main, button, a, input, select, textarea {
+  transition: all 0.4s ease;
+}
+
+/* Background soft gradient (opsional - Blu BCA look) */
+body {
+  background: linear-gradient(
+    to bottom right,
+    #f8fafc,
+    #f1f5f9
+  );
+}
+
+.dark body {
+  background: linear-gradient(
+    to bottom right,
+    #0B132B,
+    #1C2541
+  );
+}
+
+/* Toggle smooth */
+input[type="checkbox"].peer:checked + div {
+  background-color: #2563eb !important;
+}
+input[type="checkbox"].peer:checked + div + div {
+  transform: translateX(20px);
+}
+.hover-zoom {
+  transition: transform 0.2s ease-in-out;
+}
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+
+#modalBox {
+  box-shadow: 0 0 20px rgba(0, 128, 255, 0.2);
+}
+
+[x-cloak] { display: none !important; }
+
+#tabelPeminjaman tbody tr:hover {
+    background-color: rgba(59,130,246,0.05); /* biru lembut */
+}
+
